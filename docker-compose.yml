@@ -1,0 +1,24 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+#      args:
+#        - PROJECT_DIR_ARG=/usr/share/nginx/public
+    container_name: ypr-permissions-php
+    environment:
+      - PHP_UID=${PHPUID}
+      - PHP_GID=${PHPGID}
+      - DEBUG=false # true, to have more info from the entry point
+#    volumes:
+#      - ./project:/usr/share/nginx/html
+  nginx:
+    image: nginx:1.13.9-alpine
+    container_name: ypr-permissions-nginx
+    depends_on:
+      - php
+    volumes:
+      - ./project:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 8888:80 # http://127.0.0.1:8888/
