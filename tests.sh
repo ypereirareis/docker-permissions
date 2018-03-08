@@ -5,7 +5,6 @@ set -x
 
 URI='http://127.0.0.1:8888/'
 
-
 build(){
     docker-compose build
 }
