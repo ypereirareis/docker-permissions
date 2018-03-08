@@ -1,5 +1,7 @@
 # Docker volumes and permissions
 
+[![Build Status](https://travis-ci.org/ypereirareis/docker-permissions.svg?branch=master)](https://travis-ci.org/ypereirareis/docker-permissions)
+
 This repository shows you a way to deal with read/write/exec permissions
 and how to define user and group ids using volumes from the host, when running containers.
 
@@ -141,6 +143,11 @@ If everything is ok, you should see:
 
 ![OK result](./img/ok.png)
 
+# Tests
+
+```bash
+chmod +x tests.sh && ./tests.sh
+```
 
 # LICENSE
 
