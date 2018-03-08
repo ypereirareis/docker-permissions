@@ -20,3 +20,7 @@ services:
 script:
   - chmod +x tests.sh
   - bash tests.sh
+
+after_script:
+  - docker-compose stop
+  - docker-compose rm -f
