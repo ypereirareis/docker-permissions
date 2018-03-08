@@ -10,8 +10,8 @@ services:
       - PHP_UID=${PHPUID}
       - PHP_GID=${PHPGID}
       - DEBUG=false # true, to have more info from the entry point
-#    volumes:
-#      - ./project:/usr/share/nginx/html
+    volumes:
+      - ./project:/usr/share/nginx/html
   nginx:
     image: nginx:1.13.9-alpine
     container_name: ypr-permissions-nginx
