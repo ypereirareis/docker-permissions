@@ -33,7 +33,7 @@ add a custom entry point to deal with permissions.
 
 ## The problem
 
-We have a problem if we use a volumes to share our code from host into container.
+We have a problem if we use a volume to share our code from host to container.
 
 * The user running `php-fpm` in the container is `wwww-data` with `uid=100` and `gid=101`.
 * Our host user often has `uid=1000` and `gid=1000` but not always.
@@ -112,8 +112,10 @@ $ git clone git@github.com:ypereirareis/docker-permissions.git && cd docker-perm
 * Comment/Uncomment volume from `docker-compose.yml`
 
 ```yaml
-volumes:
-  - ./project:/usr/share/nginx/html
+services:
+  php:
+    volumes:
+      - ./project:/usr/share/nginx/html
 ```
 
 ```bash
