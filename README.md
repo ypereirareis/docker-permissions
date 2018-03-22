@@ -12,6 +12,8 @@ and with possibly different users from a uid/gid point of view.
 So if you want to use volumes, you need to understand how to configure the permissions of the project/folder
 mapped into your containers.
 
+:whale: **A second way of doing things is available at:** [ypereirareis/docker-permissions-reborn](https://github.com/ypereirareis/docker-permissions-reborn)
+
 ## Docker images
 
 For this demo project we are relying on two simple docker alpine images:
